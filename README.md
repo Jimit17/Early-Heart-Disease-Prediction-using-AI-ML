@@ -29,6 +29,7 @@ The heart disease prediction application while help the doctors make informed de
 **Data Analysis:**  I likely gained experience analysing large amounts of data, to train our machine learning models.
 
 **Collaboration:**  Building a project like this likely required collaboration with a team of experts in various fields, such as medical science, machine learning, and data analysis, and I likely learned the importance of working together to achieve common goals.
+
 Overall building this heart disease prediction system was challenging and was satisfying at the end of the day as I could gain knowledge on the domain and as well as on the tools which helped in improving my skills and knowledge. 
 
 
