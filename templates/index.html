@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{{title}}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!--<link href="assets/" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">-->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static',filename='vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static',filename='css/style.css')}}" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="index.html">HDP</a></h1>
+      
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container-fluid" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Heart Disease Predictor</h1>
+          <h2>Stay Ahead of Heart Disease: Get Your Risk Assessment in Seconds</h2>
+          <div><a href="#about" class="btn-get-started scrollto">Get Started</a></div>
+        </div>
+        <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+          <image src="{{url_for('static',filename='img/hero-img.png')}}" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <h1 class="d-flex justify-content-center">Please enter your details</h1>
+        <div class="container d-flex justify-content-center mt-6">
+        
+        <div class="col-lg-8">
+            <form action="/disease-predict" method="POST" class="php-email-form">
+              <div class="row">
+                
+                <div class="col-md-6 form-group">
+                  <label for="age"><b>Age</b></label>
+                    <input type="number" name="age" class="form-control" id="age" placeholder="Your Age" required>
+                </div>
+                
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label for="sex"><b>Gender</b></label>
+                    <select name="sex" id="sex" class="form-control">
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <label for="cp"><b>Chest Pain Type</b></label>
+                    <select name="cp" id="cp" class="form-control">
+                        <option value="0">No Chest Pain</option>
+                        <option value="1">Typical Angina</option>
+                        <option value="2">Atypical Angina</option>
+                        <option value="3">Non Anginal Pain</option>
+                        <option value="4">Asymptomatic</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="trestbps"><b>Resting Blood Pressure</b></label>
+                  <input type="number" name="trestbps" class="form-control" id="trestbps" placeholder="" required>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-md-6 form-group">
+                    <label for="chol"><b>Serum Cholesterol in mg/dl</b></label>
+                    <input type="text" name="chol" class="form-control" id="chol" placeholder="" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="fbs"><b>Is the Fasting Blood Sugar > 120?</b></label>
+                    <select name="fbs" id="fbs" class="form-control">
+                        <!-- <option value="">Fasting Blood Sugar > 120? </option> -->
+                        <option value="0">Yes</option>
+                        <option value="1">No</option>
+                    </select>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-md-6 form-group">
+                    <label for="restecg"><b>Resting Electrocardiographic Results</b></label>
+                    <select name="restecg" id="restecg" class="form-control">
+                        <option value="0">Normal</option>
+                        <option value="1">Having ST-T wave Abnormality</option>
+                        <option value="2">showing probable or definite left ventricular hypertrophy by Estes' criteria</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="thalach"><b>Maximum Heart Rate Achieved</b></label>
+                    <input type="number" name="thalach" class="form-control" id="thalach" placeholder="Maximum Heart Rate Achieved" required>
+                </div>
+              </div>
+              
+              <div class="row mt-4">
+                <div class="col-md-6 form-group">
+                    <label for="exang"><b>Exercise Induced Angina</b></label>
+                    <select name="exang" id="exang" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="oldpeak"><b>ST depression induced by exercise relative to rest</b></label>
+                    <input type="text" name="oldpeak" class="form-control" id="oldpeak" placeholder="" required>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-md-6 form-group">
+                    <label for="slope"><b>The slope of the peak exercise ST segment</b></label>
+                    <select name="slope" id="slope" class="form-control">
+                        <option value="1">Upsloping</option>
+                        <option value="2">Flat</option>
+                        <option value="3">Downsloping</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="ca"><b>Number of Major Vessels</b></label>
+                    <select name="ca" id="ca" class="form-control">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+              </div>
+
+              <div class="row mt-4">
+                <div class="col-md-6 form-group">
+                    <label for="thal"><b>Thal Value</b></label>
+                    <select name="thal" id="thal" class="form-control">
+                        <option value="3">Normal</option>
+                        <option value="6">Fixed Defect</option>
+                        <option value="7">Reversable Defect</option>
+                    </select>
+                </div>
+              </div>
+
+              
+              <div class="my-3">
+                <div class="text-center" ><button type="submit" style="background-color: rgba(255, 117, 110, 0.9); color: white; padding:10px; border-radius: 10px; border-color: rgba(255, 122, 115, 0.9)">Check</button></div>
+              </div>
+
+              <h1 class="d-flex justify-content-center">{{prediction}}</h1>
+              
+            </form>
+          </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+  
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static',filename='vendor/purecounter/purecounter_vanilla.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static',filename='vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <!-- <script src="{{url_for('static',filename='vendor/php-email-form/validate.js')}}"></script> -->
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static',filename='js/main.js')}}"></script>
+
+</body>
+
+</html>
